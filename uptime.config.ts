@@ -1,13 +1,17 @@
+// This is a simplified example config file for quickstart
+// Some not frequently used features are omitted/commented out here
+// For a full-featured example, please refer to `uptime.config.full.ts`
+
 // Don't edit this line
 import { MaintenanceConfig, PageConfig, WorkerConfig } from './types/config'
 
 const pageConfig: PageConfig = {
   // Title for your status page
-  title: "三木的状态页",
+  title: "AcoFork 的状态页",
   // Links shown at the header of your status page, could set `highlight` to `true`
   links: [
     { link: 'https://github.com/afoim', label: 'GitHub' },
-    { link: 'https://chsm666.top', label: '博客' },
+    { link: 'https://gdz66601@gmail.com', label: '博客' },
   ],
 }
 
@@ -51,7 +55,7 @@ const workerConfig: WorkerConfig = {
     // },
     {
       id: 'uptimekuma',
-      名字: 'UptimeKuma',
+      name: 'UptimeKuma',
       method: 'HEAD',
       target: 'https://acofork-uptime.zeabur.app/status/acofork',
       statusPageLink: 'https://acofork-uptime.zeabur.app/status/acofork',
@@ -61,27 +65,17 @@ const workerConfig: WorkerConfig = {
     },
     {
       id: 'blog',
-      名字: '博客总入口（自动分流）',
+      name: '博客总入口（自动分流）',
       method: 'HEAD',
-      target: 'https://chsm666.top',
+      target: 'https://chsm666.top/',
       statusPageLink: 'https://blog.acofork.com/',
       hideLatencyChart: false,
       expectedCodes: [200],
       timeout: 10000,
     },
     {
-      id: 'blog_eo',
-      名字: '博客（EdgeOne Pages国内节点）',
-      method: 'HEAD',
-      target: 'https://eo-blog.acofork.com/',
-      statusPageLink: 'https://eo-blog.acofork.com/',
-      hideLatencyChart: false,
-      expectedCodes: [200],
-      timeout: 10000,
-    },
-    {
       id: 'blog_cf',
-      名字: '博客（Cloudflare Pages海外节点）',
+      name: '博客（Cloudflare Pages海外节点）',
       method: 'HEAD',
       target: 'https://cf-blog.acofork.com/',
       statusPageLink: 'https://cf-blog.acofork.com/',
@@ -91,7 +85,7 @@ const workerConfig: WorkerConfig = {
     },
     {
       id: 'umami_nas',
-      名字: 'Umami（NAS）',
+      name: 'Umami（NAS）',
       method: 'HEAD',
       target: 'https://umami.acofork.com/',
       statusPageLink: 'https://umami.acofork.com/',
@@ -101,7 +95,7 @@ const workerConfig: WorkerConfig = {
     },
     {
       id: 'vw_nas',
-      名字: 'VaultWarden（NAS）',
+      name: 'VaultWarden（NAS）',
       method: 'HEAD',
       target: 'https://vw.acofork.com/',
       statusPageLink: 'https://vw.acofork.com/',
@@ -111,7 +105,7 @@ const workerConfig: WorkerConfig = {
     },
     {
       id: 'pan_nas',
-      名字: 'OpenList（NAS）',
+      name: 'OpenList（NAS）',
       method: 'GET',
       target: 'https://pan.acofork.com/',
       statusPageLink: 'https://pan.acofork.com/',
@@ -121,7 +115,7 @@ const workerConfig: WorkerConfig = {
     },
     {
       id: 'fnos_nas',
-      名字: '飞牛（NAS）',
+      name: '飞牛（NAS）',
       method: 'HEAD',
       target: 'https://nas.acofork.com/',
       statusPageLink: 'https://nas.acofork.com/',
@@ -131,7 +125,7 @@ const workerConfig: WorkerConfig = {
     },
     {
       id: 'gh_proxy_eo',
-      名字: 'Github 代理（EdgeOne）',
+      name: 'Github 代理（EdgeOne）',
       method: 'HEAD',
       target: 'https://gh.072103.xyz/',
       statusPageLink: 'https://gh.072103.xyz/',
@@ -141,7 +135,7 @@ const workerConfig: WorkerConfig = {
     },
     {
       id: 'gh_proxy_cf',
-      名字: 'Github 代理（Cloudflare）',
+      name: 'Github 代理（Cloudflare）',
       method: 'HEAD',
       target: 'https://cf-gh.072103.xyz/',
       statusPageLink: 'https://cf-gh.072103.xyz/',
@@ -151,7 +145,7 @@ const workerConfig: WorkerConfig = {
     },
     {
       id: 'eopfapi',
-      名字: '随机图API（EdgeOne）',
+      name: '随机图API（EdgeOne）',
       method: 'HEAD',
       target: 'https://eopfapi.acofork.com/pic/',
       statusPageLink: 'https://eopfapi.acofork.com/pic/',
@@ -161,7 +155,7 @@ const workerConfig: WorkerConfig = {
     },
     {
       id: 'eo_umami',
-      名字: 'Umami（EdgeOne Pages）',
+      name: 'Umami（EdgeOne Pages）',
       method: 'HEAD',
       target: 'https://eo-umami.acofork.com/',
       statusPageLink: 'https://eo-umami.acofork.com/',
@@ -170,8 +164,18 @@ const workerConfig: WorkerConfig = {
       timeout: 10000,
     },
     {
+      id: 'upload_to_s3',
+      name: '简单上传文件到S3（EdgeOne Pages）',
+      method: 'GET',
+      target: 'https://u.2x.nz/',
+      statusPageLink: 'https://u.2x.nz/',
+      hideLatencyChart: false,
+      expectedCodes: [200],
+      timeout: 10000,
+    },
+    {
       id: 'onedrive_index',
-      名字: 'OneDrive 公开只读（Vercel）',
+      name: 'OneDrive 公开只读（Vercel）',
       method: 'HEAD',
       target: 'https://e3.2x.nz/',
       statusPageLink: 'https://e3.2x.nz/',
@@ -180,8 +184,18 @@ const workerConfig: WorkerConfig = {
       timeout: 10000,
     },
     {
+      id: 'eo_http',
+      name: '网站安全测试（EdgeOne Pages）',
+      method: 'HEAD',
+      target: 'https://http.acofork.com/',
+      statusPageLink: 'https://http.acofork.com/',
+      hideLatencyChart: false,
+      expectedCodes: [200],
+      timeout: 10000,
+    },
+    {
       id: 'yxvm_ssh',
-      名字: 'YxVM SSH',
+      name: 'YxVM SSH',
       method: 'TCP_PING',
       target: '46.232.60.28:22',
       timeout: 5000,
@@ -226,8 +240,8 @@ const workerConfig: WorkerConfig = {
   },
   callbacks: {
     onStatusChange: async (
-      env: 所有,
-      monitor: 所有,
+      env: any,
+      monitor: any,
       isUp: boolean,
       timeIncidentStart: number,
       timeNow: number,
