@@ -5,13 +5,12 @@
 // Don't edit this line
 import { MaintenanceConfig, PageConfig, WorkerConfig } from './types/config'
 
+// 1. 修改 PageConfig 部分
 const pageConfig: PageConfig = {
-  // Title for your status page
-  标题: "三木的状态页",
-  // Links shown at the header of your status page, could set `highlight` to `true`
+  标题: "三木的状态页", // 这里的 'title' 不能改，后面的内容可以改
   links: [
-    { link: 'https://github.com/afoim', 标签: 'GitHub' },
-    { link: 'https://chsm666.top', 标签: '博客' },
+    { link: 'https://github.com/afoim', label: 'GitHub' }, // '标签' 改为 'label'
+    { link: 'https://chsm666.top', label: '博客' },
   ],
 }
 
