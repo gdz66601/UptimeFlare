@@ -3,11 +3,11 @@ import { MaintenanceConfig, PageConfig, WorkerConfig } from './types/config'
 
 const pageConfig: PageConfig = {
   // Title for your status page
-  标题: "三木的状态页",
+  title: "三木的状态页",
   // Links shown at the header of your status page, could set `highlight` to `true`
   links: [
-    { link: 'https://github.com/afoim', 标签: 'GitHub' },
-    { link: 'https://chsm666.top', 标签: '博客' },
+    { link: 'https://github.com/afoim', label: 'GitHub' },
+    { link: 'https://chsm666.top', label: '博客' },
   ],
 }
 
